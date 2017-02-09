@@ -29,7 +29,11 @@ function show (id) {
       console.error(err)
       return
     }
-    console.log(showedTodo)
+    if (showedTodo) {
+      console.log(showedTodo)
+    } else {
+      console.log('ID not valid')
+    }
   })
 }
 
@@ -40,7 +44,11 @@ function update (id, params) {
       console.error(err)
       return
     }
-    console.log(updatedTodo)
+    if (updatedTodo) {
+      console.log(updatedTodo)
+    } else {
+      console.log("ID not valid")
+    }
   })
 }
 
@@ -51,8 +59,12 @@ function destroy (id) {
       console.log('failure')
       return
     }
-    console.log('success')
-    console.log(destroyedTodo)
+    if (destroyedTodo) {
+      console.log('success')
+      console.log(destroyedTodo)
+    } else {
+      console.log('ID not valid')
+    }
   })
 }
 
