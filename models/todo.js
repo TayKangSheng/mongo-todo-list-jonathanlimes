@@ -16,6 +16,9 @@ const todoSchema = new mongoose.Schema({
   }
 })
 
+// Non-relational database, so upon the validation that is quickest to finish, it will return first.
+// I.e. you might get 'completed' as a field first before name and description
+
 const Todo = mongoose.model('Todo', todoSchema)
 
 module.exports = Todo

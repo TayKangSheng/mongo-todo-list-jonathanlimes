@@ -47,7 +47,7 @@ function update (id, params) {
     if (updatedTodo) {
       console.log(updatedTodo)
     } else {
-      console.log("ID not valid")
+      console.log('ID not valid')
     }
   })
 }
@@ -74,7 +74,7 @@ function destroyAll () {
       console.error(err)
       return
     }
-    console.log(allDestroyedTodos)
+    console.log('All todos removed')
   })
 }
 
