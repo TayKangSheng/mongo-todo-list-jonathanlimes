@@ -7,7 +7,7 @@ const port = process.env.PORT || 4000
 
 // require Mongoose, connect to DB
 const mongoose = require('mongoose')
-mongoose.connect('mmongodb://jonathanlimes:iamusingthisformymlabproject@ds149069.mlab.com:49069/tododb')
+mongoose.connect('mongodb://jonathanlimes:iamusingthisformymlabproject@ds149069.mlab.com:49069/tododb')
 mongoose.Promise = global.Promise
 
 // inherit the Schema
