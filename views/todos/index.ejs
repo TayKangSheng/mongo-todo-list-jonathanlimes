@@ -5,9 +5,13 @@
     <title>Todo Index</title>
   </head>
   <body>
-    <h1>Todo List</h1>
-    <ul>
-      <li><%= todo.name%><span>(<%= todo.description%>)</span></li>
-    </ul>
+
+    <h1>Things you need to get done:</h1>
+    <form action="">
+      <% allTodos.forEach(function(todo) { %>
+      <input type = "checkbox"><%= todo.name%> <span>( <%= todo.description%> )</span><br>
+      <% }) %>
+    </form>
+
   </body>
 </html>

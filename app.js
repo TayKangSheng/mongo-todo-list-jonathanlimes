@@ -8,10 +8,11 @@ const port = process.env.PORT || 4000
 // require Mongoose, connect to DB
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://jonathanlimes:iamusingthisformymlabproject@ds149069.mlab.com:49069/tododb')
+// mongoose.connect('mongodb://localhost/mongo-todo-list')
 mongoose.Promise = global.Promise
 
 // inherit the Schema
-const Todo = require('../models/todo')
+const Todo = require('./models/todo')
 
 // set view engine to be EJS
 app.set('view engine', 'ejs')
@@ -47,13 +48,13 @@ app.get('/todos', function (request, response) {
 // }
 
 // show: show Todo by Id
-app.get('/movies/:todoId', function(request, response) {
-  Todo.findOne({todoId: request.params.todoId}, function (err, returnedTodo) {
+app.get('/todos/:todoId', function(request, response) {
+  Todo.findOne({_id: request.params.todoId}, function (err, returnedTodo) {
     if (err) {
       console.error(err)
       return
     }
-    response.render('./movies/show', {
+    response.render('./todos/show', {
       todo: returnedTodo
     })
   })
