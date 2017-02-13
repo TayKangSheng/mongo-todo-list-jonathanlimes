@@ -31,21 +31,12 @@ app.get('/todos', function (request, response) {
       return
     }
     // To provide a RESPONSE to the VIEWS, you need to RENDER the page here + pass data to the EJS.
-    response.render('./todos/index', {
-      allTodos: output
-    })
+    // response.render('./todos/index', {
+    //   allTodos: output
+    // })
+    response.send('output')
   })
 })
-
-// function list () {
-//   Todo.find({}, function (err, listedTodo) {
-//     if (err) {
-//       console.error(err)
-//       return
-//     }
-//     console.log(listedTodo)
-//   })
-// }
 
 // show: show Todo by Id
 app.get('/todos/:todoId', function(request, response) {
@@ -54,25 +45,14 @@ app.get('/todos/:todoId', function(request, response) {
       console.error(err)
       return
     }
-    response.render('./todos/show', {
-      todo: returnedTodo
-    })
+    // response.render('./todos/show', {
+    //   todo: returnedTodo
+    // })
+    response.send(returnedTodo)
   })
 })
 
-// function show (id) {
-//   Todo.findById((id), function (err, showedTodo) {
-//     if (err) {
-//       console.error(err)
-//       return
-//     }
-//     if (showedTodo) {
-//       console.log(showedTodo)
-//     } else {
-//       console.log('ID not valid')
-//     }
-//   })
-// }
+
 
 // Default app listener
 app.listen(port, function () {
